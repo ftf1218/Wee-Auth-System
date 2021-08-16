@@ -1,5 +1,8 @@
 <?php
 include("api.inc.php");
+$file = 'https://github.com/wibus-wee/STY-static/raw/main/.ver';
+$version = file_get_contents($file);
+$version= str_replace(array("\r\n", "\r", "\n"), "", $version);  
 $id=$conf['id'];
 $url=daddslashes($_GET['url']);
 $authcode=daddslashes($_GET['authcode']);
@@ -15,12 +18,12 @@ if($_GET['ver']) {
 	$download=$siteurl.'download.php?update=true&param='.$param.'&rand='.rand(100000,999999);
 
 	if($allowupdate==1) {
-		if($_GET['ver']>=VERSION) {
+		if($_GET['ver']>=$version) {
 			$code=0;
-			$msg='<font color="green">您使用的已是最新版本！</font><br/>当前版本：V1.4.5 (Build '.VERSION.')';
+			$msg=$version;
 		} else {
 			$code=1;
-			$msg='<font color="red">发现新版本！</font> 最新版本：V1.4.5 (Build '.VERSION.')';
+			$msg=$version;
 		}
 	} else {
 		$code=0;
@@ -30,7 +33,7 @@ if($_GET['ver']) {
 
 if(checkauth3($url, $authcode)) {
 	if($_GET['ver'])
-		$result=array('code'=>$code,'msg'=>$msg,'uplog'=>$uplog,'file'=>$download);
+		$result=array('code'=>$code,'msg'=>$version,'authcode'=>$authcode);
 	else
 		$result=array('code'=>'1','authcode'=>$authcode);
 } else {
