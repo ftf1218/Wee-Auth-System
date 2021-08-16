@@ -16,24 +16,11 @@ if($_GET['ver']) {
 
 	$param=base64_encode(authcode($_GET['ver']."\t".$url."\t".$authcode."\t".(time()+600),'ENCODE','daigua!!'));
 	$download=$siteurl.'download.php?update=true&param='.$param.'&rand='.rand(100000,999999);
-
-	if($allowupdate==1) {
-		if($_GET['ver']>=$version) {
-			$code=0;
-			$msg=$version;
-		} else {
-			$code=1;
-			$msg=$version;
-		}
-	} else {
-		$code=0;
-		$msg='<font color="blue">更新服务器正在维护，请稍后访问！</font>';
-	}
 }
 
 if(checkauth3($url, $authcode)) {
 	if($_GET['ver'])
-		$result=array('code'=>$code,'msg'=>$version,'authcode'=>$authcode);
+		$result=array('code'=>'1','msg'=>$version,'authcode'=>$authcode);
 	else
 		$result=array('code'=>'1','authcode'=>$authcode);
 } else {
