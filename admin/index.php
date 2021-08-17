@@ -25,7 +25,7 @@ $blocks=$DB->count("SELECT count(*) from auth_block WHERE 1");
 </tr>
 <tr height="25">
 <td align="center"><font color="#808080"><b><span class="glyphicon"></span>账号权限：</b></br>获取密码权限=<?=$udata['per_db']?>  授权操作权限=<?=$udata['active']?></font></td>
-<td align="center"><font color="#808080"><b><i class="glyphicon"></i>欢迎您管理员：</b></br></span><?=$udata['user']?></font></td>
+<td align="center"><font color="#808080"><b><i class="glyphicon"></i>欢迎您用户：</b></br></span><?=$udata['user']?></font></td>
 <tr height="25">
 <td align="center"><font color="#808080"><b><span class="glyphicon"></span>服务器软件：</b></br><?php echo $_SERVER['SERVER_SOFTWARE'] ?></font></td>
 <td align="center"><font color="#808080"><b><i class="glyphicon"></i>您的QQ</b></br></span><?=$udata['dlqq']?></font></td>
