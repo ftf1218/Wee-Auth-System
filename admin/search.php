@@ -11,10 +11,7 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
 <div class="col-lg-8 col-md-12 col-lg-offset-2 text-center">
 <div class="panel panel-info" >
 <?php
-if($udata['per_db']==0) {
-	showmsg('您的账号没有权限使用此功能',3);
-	exit;
-}
+
 ?>
 <div class="panel-heading font-bold">搜索授权</div>
 <div class="panel-body">
@@ -22,10 +19,20 @@ if($udata['per_db']==0) {
             <div class="form-group">
               <label>类别</label>
               <select name="type" class="form-control">
-                <option value="1">ＱＱ</option>
-                <option value="2">域名</option>
-                <option value="3">授权码</option>
-                <option value="4">特征码</option>
+                <?php
+                if ($udata['per_db'] == 0) { //如果是用户的话
+                  echo '
+                  <option value="1">ＱＱ</option>
+                  ';
+                }else{
+                  echo '
+                  <option value="1">ＱＱ</option>
+                  <option value="2">域名</option>
+                  <option value="3">授权码</option>
+                  <option value="4">特征码</option>
+                  ';
+                }
+                ?>
               </select>
             </div>
             <div class="form-group">

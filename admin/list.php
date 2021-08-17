@@ -12,8 +12,11 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
 <div class="panel panel-info" >
 <?php
 if($udata['per_db']==0) {
-	showmsg('您的账号没有权限使用此功能',3);
-	exit;
+	// showmsg('您的账号没有权限使用此功能',3);
+	// exit;
+	if ($_GET['kw'] != $udata['dlqq']) {
+		showmag('您的账号没有权限搜索别人的信息！');
+	}
 }
 if(isset($_GET['kw'])) {
 	if($_GET['type']==1)

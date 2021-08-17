@@ -11,13 +11,15 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
 <div class="col-lg-8 col-md-12 col-lg-offset-2 text-center">
 <div class="panel panel-info" >
 <?php
-/*if($udata['per_db']==0) {
-	showmsg('您的账号没有权限使用此功能',3);
-	exit;
-}*/
 if($_GET['my']=='edit') {
 $id=intval($_GET['id']);
 $row=$DB->get_row("SELECT * FROM auth_site WHERE id='{$id}' limit 1");
+if ($udata['per_db'] == 0) { //如果是用户的话
+  if ($row['uid'] != $udata['dlqq']) {
+    showmsg('您的账号没有权限使用此功能',3);
+    exit; 
+  }
+}
 if($row=='')exit("<script language='javascript'>alert('授权平台不存在该记录！');history.go(-1);</script>");
 if(isset($_POST['submit'])) {
 	$uid=daddslashes($_POST['uid']);
