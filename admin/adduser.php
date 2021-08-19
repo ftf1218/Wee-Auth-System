@@ -20,14 +20,6 @@ if($udata['per_db']==0) {
 	exit;
 }
 if(isset($_POST['user']) && isset($_POST['pass'])&& isset($_POST['dlqq'])){
-$user=daddslashes($_POST['user']);
-$dlqq=daddslashes($_POST['dlqq']);
-$row=$DB->get_row("SELECT * FROM auth_user WHERE user='{$user}' limit 1");
-if($row) {
-	showmsg('用户名已存在',3);
-	exit;
-}
-$pass=daddslashes($_POST['pass']);
 $per=daddslashes($_POST['per']);
 if($per=="1"){
 	$per_sq=1;
@@ -41,7 +33,17 @@ if($per=="1"){
 	$per_sq=0;
 	$per_db=0;
 	$active=0;
-	}
+}
+if($per=="1"){
+  $dlqq=daddslashes($_POST['dlqq']);
+  $user=$dlqq;
+  $pass=$dlqq;
+}
+$row=$DB->get_row("SELECT * FROM auth_user WHERE user='{$user}' limit 1");
+if($row) {
+	showmsg('用户名已存在',3);
+	exit;
+}
 	$sql="insert into `auth_user` (`user`,`pass`,`dlqq`,`per_sq`,`per_db`,`active`) values ('".$user."','".$pass."','".$dlqq."','".$per_sq."','".$per_db."','".$active."')";
 	$DB->query($sql);
 	$city=get_ip_city($clientip);
@@ -49,7 +51,7 @@ if($per=="1"){
 
 exit("<script language='javascript'>alert('添加用户成功！');window.location.href='userlist.php';</script>");
 } 
-				if(($udata['uid'])=="1"){$all='	<option value="1">普通用户（仅简单权限）</option>';}
+				if(($udata['uid'])=="1"){$all='	<option value="1">普通用户（仅简单权限，仅需要填写QQ即可自动生成其他的了）</option>';}
 ?>
       <div class="panel-heading font-bold">添加用户</div>
         <div class="panel-body">
