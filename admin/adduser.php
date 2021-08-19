@@ -48,8 +48,34 @@ if($row) {
 	$DB->query($sql);
 	$city=get_ip_city($clientip);
 		$DB->query("insert into `auth_log` (`uid`,`type`,`date`,`city`,`data`) values ('".$udata['user']."','添加用户','".$date."','".$city."','新用户名".$user."|授权".$per_sq."|获取".$per_db."|状态".$active."')");
-
-exit("<script language='javascript'>alert('添加用户成功！');window.location.href='userlist.php';</script>");
+    if ($per=="1") {
+      exit("<script language='javascript'>
+      async function copyInformation() {
+        try {
+          await navigator.clipboard.writeText(
+            `
+            添加用户成功！
+            授权平台后台：auth.iucky.cn/admin
+            用户名：".$user."
+            密码：".$pass."
+            ！！强烈建议登陆后修改密码！！
+            `
+          );
+          console.log('Information copied to clipboard');
+        } catch (err) {
+          console.error('Failed to copy: ', err);
+        }
+      }
+      copyInformation()
+      alert(`
+      添加用户成功！
+      授权平台后台：auth.iucky.cn/admin
+      用户名：".$user."
+      密码：".$pass."
+      ！！强烈建议登陆后修改密码！！
+      `);
+      // window.location.href='userlist.php';</script>");
+    }
 } 
 				if(($udata['uid'])=="1"){$all='	<option value="1">普通用户（仅简单权限，仅需要填写QQ即可自动生成其他的了）</option>';}
 ?>
