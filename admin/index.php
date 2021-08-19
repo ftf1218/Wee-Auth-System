@@ -30,7 +30,21 @@ $blocks=$DB->count("SELECT count(*) from auth_block WHERE 1");
 <td align="center"><font color="#808080"><b><span class="glyphicon"></span>服务器软件：</b></br><?php echo $_SERVER['SERVER_SOFTWARE'] ?></font></td>
 <td align="center"><font color="#808080"><b><i class="glyphicon"></i>您的QQ</b></br></span><?=$udata['dlqq']?></font></td>
 </tr>
+<?
+if($udata['per_db']==0) {
+  echo <<<EOF
+  <tr height="25">
+<td align="center"><a href="../" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-home"></i>网站首页</a></td>
+<td align="center"><a href="./addsite.php" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-folder-close"></i>添加站点</a></td>
+</tr>
 <tr height="25">
+<td align="center"><a href="./search.php" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-globe"></i>搜索授权</a></td>
+<td align="center"><a href="./password.php" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-cog"></i>修改密码</a></td>
+</tr>
+EOF;
+}else{
+  echo <<<EOF
+  <tr height="25">
 <td align="center"><a href="../" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-home"></i>网站首页</a></td>
 <td align="center"><a href="./add.php" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-home"></i>添加授权</a></td>
 </tr>
@@ -50,6 +64,9 @@ $blocks=$DB->count("SELECT count(*) from auth_block WHERE 1");
 <td align="center"><a href="./log.php" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-globe"></i>操作记录</a></td>
 <td align="center"><a href="./downfile.php" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-cog"></i>下载管理</a></td>
 </tr>
+EOF;
+}
+?>
 </tbody>
       <div class="panel panel-primary">
         <div class="panel-heading"><h3 class="panel-title">Wee Auth System</h3></div>

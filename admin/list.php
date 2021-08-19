@@ -10,14 +10,15 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
 ?>
 <div class="col-lg-8 col-md-12 col-lg-offset-2 text-center">
 <div class="panel panel-info" >
-<?php
+<?
 if($udata['per_db']==0) {
-	// showmsg('您的账号没有权限使用此功能',3);
-	// exit;
 	if ($_GET['kw'] != $udata['dlqq']) {
 		showmag('您的账号没有权限搜索别人的信息！');
+		exit;
 	}
 }
+?>
+<?php
 if(isset($_GET['kw'])) {
 	if($_GET['type']==1)
 		$sql=($_GET['method']==1)?" `uid` LIKE '%{$_GET['kw']}%'":" `uid`='{$_GET['kw']}'";

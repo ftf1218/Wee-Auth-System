@@ -31,11 +31,11 @@ $pass=daddslashes($_POST['pass']);
 $per=daddslashes($_POST['per']);
 if($per=="1"){
 	$per_sq=1;
-	$per_db=1;
+	$per_db=0;
 	$active=1;
 }else if($per=="2"){
 	$per_sq=1;
-	$per_db=0;
+	$per_db=1;
 	$active=1;
 }else if($per=="3"){
 	$per_sq=0;
@@ -49,7 +49,7 @@ if($per=="1"){
 
 exit("<script language='javascript'>alert('添加用户成功！');window.location.href='userlist.php';</script>");
 } 
-				if(($udata['uid'])=="1"){$all='	<option value="1">副站长</option>';}
+				if(($udata['uid'])=="1"){$all='	<option value="1">普通用户（仅简单权限）</option>';}
 ?>
       <div class="panel-heading font-bold">添加用户</div>
         <div class="panel-body">
@@ -71,8 +71,8 @@ exit("<script language='javascript'>alert('添加用户成功！');window.locati
 			  <span class="input-group-addon">权限:</span>
 			  <select name="per" class="form-control">
 				<?php echo $all;?>
-					<option value="2">授权商</option>
-					<option value="3">封禁该用户</option>
+					<option value="2">副站长（所有权限）</option>
+					<option value="3">封禁该用户（无任何权限）</option>
               </select>
             </div><br/>
             <div class="form-group">

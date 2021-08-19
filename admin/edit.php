@@ -14,12 +14,6 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
 if($_GET['my']=='edit') {
 $id=intval($_GET['id']);
 $row=$DB->get_row("SELECT * FROM auth_site WHERE id='{$id}' limit 1");
-if ($udata['per_db'] == 0) { //如果是用户的话
-  if ($row['uid'] != $udata['dlqq']) {
-    showmsg('您的账号没有权限使用此功能',3);
-    exit; 
-  }
-}
 if($row=='')exit("<script language='javascript'>alert('授权平台不存在该记录！');history.go(-1);</script>");
 if(isset($_POST['submit'])) {
 	$uid=daddslashes($_POST['uid']);
@@ -34,8 +28,17 @@ if(isset($_POST['submit'])) {
 		else showmsg('修改失败！<br/>'.$DB->error(),4,$_POST['backurl']);
 	}
 }else{
+  
 ?>
 <div class="panel-heading font-bold">编辑授权</div>
+<?
+if ($udata['per_db'] == 0) { //如果是用户的话
+  if ($row['uid'] != $udata['dlqq']) {
+    showmsg('您的账号没有权限使用此功能');
+    exit; 
+  }
+}
+?>
 <div class="panel-body">
           <form action="./edit.php?my=edit&id=<?php echo $id; ?>" method="post" class="form-horizontal" role="form">
 		  <input type="hidden" name="backurl" value="<?php echo $_SERVER['HTTP_REFERER']; ?>"/>

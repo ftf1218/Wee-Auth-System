@@ -8,7 +8,7 @@ $title='添加授权';
 include './head.php';
 if($islogin==1){}else exit("<script language='javascript'>window.location.href='./login.php';</script>");
 if ($udata['per_db'] == 0) { //如果是用户的话
-  showmsg('您的账号没有权限使用此功能',3);
+  showmsg('您的账号没有权限使用此功能，请前往添加站点添加新的授权！',3);
 exit;
 }
 ?>
