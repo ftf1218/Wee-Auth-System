@@ -36,7 +36,7 @@ foreach($url_arr as $val) {
 if($re){
 $city=get_ip_city($clientip);
 $DB->query("insert into `auth_log` (`uid`,`type`,`date`,`city`,`data`) values ('".$user."','添加站点','".$date."','".$city."','".$qq."|".$re."')");
-exit("<script language='javascript'>alert('{$re}添加成功！');history.go(-1);</script>");
+exit("<script language='javascript'>alert('{$re}添加成功！');window.location.href='downfile.php?qq={$qq}'</script>");
 }else
 exit("<script language='javascript'>alert('添加失败，可能域名已存在！');history.go(-1);</script>");
 } ?>

@@ -7,10 +7,10 @@ include("../api.inc.php");
 $title='添加授权';
 include './head.php';
 if($islogin==1){}else exit("<script language='javascript'>window.location.href='./login.php';</script>");
-if ($udata['per_db'] == 0) { //如果是用户的话
-  showmsg('您的账号没有权限使用此功能，请前往添加站点添加新的授权！',3);
-exit;
-}
+// if ($udata['per_db'] == 0) { //如果是用户的话
+//   showmsg('您的账号没有权限使用此功能，请前往添加站点添加新的授权！',3);
+// exit;
+// }
 ?>
 <div class="col-lg-8 col-md-12 col-lg-offset-2 text-center">
 <div class="panel panel-info" >
@@ -20,6 +20,9 @@ exit;
 	exit;
 }*/
 if(isset($_POST['qq']) && isset($_POST['url'])){
+if ($udata['per_db'] == 0) { //如果是用户的话
+  $_POST['qq'] = $udata['dlqq'];
+}
 $qq=daddslashes($_POST['qq']);
 $url=daddslashes($_POST['url']);
 $row=$DB->get_row("SELECT * FROM auth_site WHERE uid='{$qq}' limit 1");
