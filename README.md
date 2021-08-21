@@ -74,3 +74,27 @@ How to create c-p:
 - `Domestic consumer`, it only has **add** and **addsite** permissions
 - `Assistant station master`, it has a full permission like administration
 - `Banned users`, it can do nothing
+
+## Thank Repos / People
+
+- **SummuL Auth System**
+
+  This is Project prototype, I redeveloped the project
+
+  i fix and optimize..
+
+  - Make API more stronger, make sure `AuthCode` can match the database
+  - Optimize frontend, remove cartoons and music
+  - Optimize Check API, remove useless variable `VERSION`, add remote resource（use `file_get_contents` make sure resource can get）
+  - Fix Check API header, make sure header is `json`
+  - Optimize Back-end UI, more comfortable, try to rebuild.
+
+- **Bootstrap 5**
+
+  `UI` help, make ui come true more convenient.
+
+  `JavaScript` help, add the plugins to enhance interactivity
+
+- **Mr./Ms. Nuo**
+
+  **Nuo** give me the first auth system, and the system give me inspiration. It's machine made stiil be used in `Wee-Auth-System`
