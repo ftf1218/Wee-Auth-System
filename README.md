@@ -23,9 +23,9 @@ WAS can finish the works like the list:
 
 - Default user & password:
 
-  `User：`admin
+  `User:`admin
 
-  `Password：`123456
+  `Password:`123456
 
 ## API setting
 
