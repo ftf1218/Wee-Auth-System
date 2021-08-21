@@ -15,7 +15,7 @@ WAS can finish the works like the list:
 
 ## Quick install
 
-- git clone this repo ot download repo zip
+- git clone this repo or download repo zip
 
 - Access index page, it will redirect you to install page
 
