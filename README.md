@@ -41,7 +41,7 @@ If you use remote resouce to control version setting, you can do like this:
 
 ```php
 $file = 'https://github.com/wibus-wee/STY-static/raw/main/.ver'; //remote resource URL
-$version = file_get_contents($file); //it can't use get_curl, reason is finding
+$version = file_get_contents($file); //it can't use get_curl, i don't know reason
 $version= str_replace(array("\r\n", "\r", "\n"), "", $version);  //replace PHP line break
 ```
 
