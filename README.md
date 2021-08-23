@@ -1,4 +1,4 @@
-# Wee-Auth-System
+# Wee-Auth-System `v1.0.0`
 > A Auth System, Built with PHP
 
 Next, we will call `Wee-Auth-System`: `WAS`, it's same like `was`(passive of `is`)
