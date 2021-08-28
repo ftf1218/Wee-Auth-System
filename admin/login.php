@@ -45,14 +45,12 @@ $title='用户登录';
 <link rel="stylesheet" href="Public/wap/css/wap.css" type="text/css" />
 <link rel="stylesheet" href="Public/wap/css/app.css" type="text/css" />
 </head>
+
+
 <body class="bg-white" ontouchstart="">
 <div class="container w-xxxl padder">
 <div class="text-center logo">
-
-<?php
-echo '<img src="//q4.qlogo.cn/headimg_dl?dst_uin='.$zzqqname.'&spec=100" height="106px" class="b b-3x">'
-?>
-
+	<h2>授权管理后台</h2>
 </div>
 <form action="./login.php" method="post" class="form-horizontal" role="form">
 <div class="list b-t-0 m-t padder-0">
