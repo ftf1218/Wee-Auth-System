@@ -33,8 +33,8 @@ $sign=$row['sign'];
             <li class="list-group-item"><span class="glyphicon glyphicon-time"></span> <b>授权代码：</b> <?=$authcode?></li>
             <li class="list-group-item"><span class="glyphicon glyphicon-tint"></span> <b>特征代码：</b> <?=$sign?></li>
             <li class="list-group-item"><span class="glyphicon glyphicon-list"></span> <b>下载类型：</b> 
-              <a href="download.php?my=installer&authcode=<?=$authcode?>&sign=<?=$sign?>&r=<?=time()?>" class="btn btn-xs btn-success">完整安装包</a>&nbsp;
-              <a href="download.php?my=updater&authcode=<?=$authcode?>&sign=<?=$sign?>&r=<?=time()?>" class="btn btn-xs btn-primary">更新包</a>
+              <!-- <a href="download.php?my=installer&authcode=<?=$authcode?>&sign=<?=$sign?>&r=<?=time()?>" class="btn btn-xs btn-success">完整安装包</a>&nbsp;
+              <a href="download.php?my=updater&authcode=<?=$authcode?>&sign=<?=$sign?>&r=<?=time()?>" class="btn btn-xs btn-primary">更新包</a> -->
             </li>
           </ul>
 		  <div class="panel-footer">
