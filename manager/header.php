@@ -4,11 +4,12 @@
  * @author: Wibus
  * @Date: 2021-08-29 00:26:20
  * @LastEditors: Wibus
- * @LastEditTime: 2021-08-29 15:19:48
+ * @LastEditTime: 2021-08-29 22:05:51
  * Coding With IU
  */
 @header('Content-Type: text/html; charset=UTF-8');
 include_once("../config.php");
+include_once("./functions.php");
 ?>
 <!DOCTYPE html>
 <html lang="zh-CH">
