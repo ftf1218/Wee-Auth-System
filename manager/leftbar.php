@@ -7,7 +7,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="profile.html">
+        <a class="nav-link" href="./password.php">
             <i class="fas fa-user"></i>
             <span style="margin-left: 5px;">个人中心</span>
         </a>
