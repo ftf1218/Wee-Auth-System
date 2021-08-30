@@ -22,7 +22,7 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
                     <div class="sidebar-brand-text mx-3"><span>STY Auth</span></div>
                 </a>
                 <hr class="sidebar-divider my-0">
-                <? include './leftbar.php' ?>
+                <? include './components/leftBar.php' ?>
             </div>
         </nav>
         <div class="d-flex flex-column" id="content-wrapper">

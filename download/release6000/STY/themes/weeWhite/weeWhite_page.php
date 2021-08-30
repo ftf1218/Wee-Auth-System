@@ -1,1 +1,0 @@
-<? require('weeWhite_post.php') ?>
