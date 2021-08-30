@@ -4,7 +4,7 @@
  * @author: Wibus
  * @Date: 2021-08-29 00:30:40
  * @LastEditors: Wibus
- * @LastEditTime: 2021-08-30 13:31:47
+ * @LastEditTime: 2021-08-30 13:33:07
  * Coding With IU
  */
 $mod='blank';
@@ -29,20 +29,20 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
                 </a>
                 <hr class="sidebar-divider my-0">
 
-                <? include './components/leftBar.php' ?>
+                <? require('components/leftBar.php') ?>
 
             </div>
         </nav>
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
-            <? include './headnav.php' ?>
+            <? require('components/headnav.php') ?>
                 <div class="container-fluid">
                     <div class="d-sm-flex justify-content-between align-items-center mb-4">
                         <h3 class="text-dark mb-0">Home</h3>
                         <a
                             class="btn btn-primary btn-sm d-none d-sm-inline-block"
                             role="button"
-                            href="#">
+                            href="./addAuth.php">
                             <i class="fas fa-cog fa-sm text-white-50"></i>&nbsp;新建授权</a>
                     </div>
                     <div class="row" style="margin-bottom: 12px;">
@@ -54,7 +54,7 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
                                             <div class="text-uppercase text-primary fw-bold text-xs mb-1">
                                                 <span>用户类型</span></div>
                                             <div class="text-dark fw-bold h5 mb-0">
-                                                <span>STY Pro</span></div>
+                                                <span>正式用户</span></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -69,9 +69,9 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
                                     <div class="row align-items-center no-gutters">
                                         <div class="col me-2">
                                             <div class="text-uppercase text-success fw-bold text-xs mb-1">
-                                                <span>已有授权</span></div>
+                                                <span>授权产品</span></div>
                                             <div class="text-dark fw-bold h5 mb-0">
-                                                <span>1</span></div>
+                                                <span>STY</span></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-key fa-2x text-gray-300"></i>

@@ -4,7 +4,7 @@
  * @author: Wibus
  * @Date: 2021-08-29 00:26:20
  * @LastEditors: Wibus
- * @LastEditTime: 2021-08-29 22:05:51
+ * @LastEditTime: 2021-08-30 14:02:07
  * Coding With IU
  */
 @header('Content-Type: text/html; charset=UTF-8');
@@ -23,4 +23,9 @@ include_once("./functions.php");
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <style>
+        .form-label{
+            margin: .5rem;
+        }
+    </style>
 </head>

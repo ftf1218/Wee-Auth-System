@@ -1,6 +1,6 @@
 <?php
 //error_reporting(E_ALL); ini_set("display_errors", 1);
-error_reporting(0);
+// error_reporting(0);
 define('IN_CRONLITE', true);
 define('ROOT', dirname(__FILE__).'/');
 define('TEMPLATE_ROOT', ROOT.'/template/');
