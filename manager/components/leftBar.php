@@ -13,21 +13,21 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="table.html">
+        <a class="nav-link" href="./addAuth.php">
             <i class="fas fa-table"></i>
-            <span style="margin-left: 5px;">授权详情</span>
+            <span style="margin-left: 5px;">新增授权</span>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="login.html">
+        <a class="nav-link" href="./addUser.php">
             <i class="far fa-user-circle"></i>
-            <span style="margin-left: 5px;">登录页面</span>
+            <span style="margin-left: 5px;">新增用户</span>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="register.html">
+        <a class="nav-link" href="./login.php?logout">
             <i class="fas fa-user-circle"></i>
-            <span style="margin-left: 5px;">注册页面</span>
+            <span style="margin-left: 5px;">注销登录</span>
         </a>
     </li>
 </ul>
