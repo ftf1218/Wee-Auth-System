@@ -4,7 +4,7 @@
  * @author: Wibus
  * @Date: 2021-08-30 13:50:05
  * @LastEditors: Wibus
- * @LastEditTime: 2021-09-04 06:39:10
+ * @LastEditTime: 2021-09-04 06:51:31
  * Coding With IU
  */
 $mod='blank';
@@ -12,47 +12,6 @@ include("../api.inc.php");
 $title='添加用户';
 include './header.php';
 if($islogin==1){}else exit("<script language='javascript'>window.location.href='./login.php';</script>");
-?>
-<?php
-if($udata['per_sq']==0) {
-	showmsg('您的账号没有权限使用此功能',3);
-	exit;
-}
-if($udata['per_db']==0) {
-	showmsg('您的账号没有权限使用此功能',3);
-	exit;
-}
-if(isset($_POST['user']) && isset($_POST['pass'])&& isset($_POST['dlqq'])){
-$user=daddslashes($_POST['user']);
-$dlqq=daddslashes($_POST['dlqq']);
-$row=$DB->get_row("SELECT * FROM auth_user WHERE user='{$user}' limit 1");
-if($row) {
-	showmsg('用户名已存在',3);
-	exit;
-}
-$pass=daddslashes($_POST['pass']);
-$per=daddslashes($_POST['per']);
-if($per=="1"){
-	$per_sq=1;
-	$per_db=1;
-	$active=1;
-}else if($per=="2"){
-	$per_sq=1;
-	$per_db=0;
-	$active=1;
-}else if($per=="3"){
-	$per_sq=0;
-	$per_db=0;
-	$active=0;
-	}
-	$sql="insert into `auth_user` (`user`,`pass`,`dlqq`,`per_sq`,`per_db`,`active`) values ('".$user."','".$pass."','".$dlqq."','".$per_sq."','".$per_db."','".$active."')";
-	$DB->query($sql);
-	$city=get_ip_city($clientip);
-		$DB->query("insert into `auth_log` (`uid`,`type`,`date`,`city`,`data`) values ('".$udata['user']."','添加用户','".$date."','".$city."','新用户名".$user."|授权".$per_sq."|获取".$per_db."|状态".$active."')");
-
-exit("<script language='javascript'>alert('添加用户成功！');window.location.href='userlist.php';</script>");
-} 
-				if(($udata['uid'])=="1"){$all='	<option value="1">副站长</option>';}
 ?>
 <body id="page-top">
     <div id="wrapper">
@@ -72,11 +31,11 @@ exit("<script language='javascript'>alert('添加用户成功！');window.locati
                 <div class="container-fluid">
                 <?php
 if($udata['per_sq']==0) {
-	showmsg('您的账号没有权限使用此功能',3);
+	msgShow('您的账号没有权限使用此功能',3);
 	exit;
 }
 if($udata['per_db']==0) {
-	showmsg('您的账号没有权限使用此功能',3);
+	msgShow('您的账号没有权限使用此功能',3);
 	exit;
 }
 if(isset($_POST['user']) && isset($_POST['pass'])&& isset($_POST['dlqq'])){
@@ -84,7 +43,7 @@ $user=daddslashes($_POST['user']);
 $dlqq=daddslashes($_POST['dlqq']);
 $row=$DB->get_row("SELECT * FROM auth_user WHERE user='{$user}' limit 1");
 if($row) {
-	showmsg('用户名已存在',3);
+	msgShow('用户名已存在',3);
 	exit;
 }
 $pass=daddslashes($_POST['pass']);
@@ -128,29 +87,21 @@ exit("<script language='javascript'>alert('添加用户成功！');window.locati
                                         <form action="./adduser.php" method="post" role="form">
                                             <div class="mb-3">
                                                 <label class="form-label" for="address">
-                                                    <strong>QQ号</strong>
+                                                    <strong>User Name</strong>
                                                 </label>
-                                                <input
-                                                    type="text"
-                                                    name="qq"
-                                                    value="<?=@$_POST['qq']?>"
-                                                    class="form-control"
-                                                    placeholder="购买授权的QQ"
-                                                    autocomplete="off"
-                                                    required="required"/>
+                                                <input type="text" name="user" value="<?=@$_POST['user']?>" class="form-control" placeholder="" autocomplete="off"/>
 
                                                 <div class="mb-3">
                                                     <label class="form-label" for="address">
-                                                        <strong>授权站点</strong>
+                                                        <strong>Password</strong>
                                                     </label>
-                                                    <input
-                                                        type="text"
-                                                        name="url"
-                                                        value="<?=@$_POST['url']?>"
-                                                        class="form-control"
-                                                        placeholder="添多个域名请用英文逗号 , 隔开！"
-                                                        autocomplete="off"
-                                                        required="required"/>
+                                                    <input type="password" name="pass" value="<?=@$_POST['pass']?>" class="form-control" autocomplete="off"/>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="address">
+                                                        <strong>QQ</strong>
+                                                    </label>
+                                                    <input type="text" name="dlqq" value="<?=@$_POST['dlqq']?>" class="form-control" autocomplete="off" required/>
                                                 </div>
                                                 <div class="mb-3">
                                                     <!-- <button class="btn btn-primary btn-sm"

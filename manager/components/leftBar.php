@@ -1,7 +1,7 @@
 <!-- 左侧导航条 -->
 <ul class="navbar-nav text-light" id="accordionSidebar">
     <li class="nav-item">
-        <a class="nav-link active" href="index.html">
+        <a class="nav-link active" href="./">
             <i class="fas fa-tachometer-alt"></i>
             <span style="margin-left: 5px;">平台首页</span>
         </a>

@@ -4,7 +4,7 @@
  * @author: Wibus
  * @Date: 2021-08-29 00:30:40
  * @LastEditors: Wibus
- * @LastEditTime: 2021-08-30 13:33:07
+ * @LastEditTime: 2021-09-04 07:04:40
  * Coding With IU
  */
 $mod='blank';
@@ -12,6 +12,13 @@ include("../api.inc.php");
 $title='首页';
 include './header.php';
 if($islogin==1){}else exit("<script language='javascript'>window.location.href='./login.php';</script>");
+
+$file = 'https://github.com/wibus-wee/STY-static/raw/main/.ver';
+$version = file_get_contents($file);
+$version= str_replace(array("\r\n", "\r", "\n"), "", $version); 
+$Newver=$version;
+
+
 ?>
 <body id="page-top">
     <div id="wrapper">
@@ -90,7 +97,7 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
                                             <div class="row g-0 align-items-center">
                                                 <div class="col-auto">
                                                     <div class="text-dark fw-bold h5 mb-0 me-3">
-                                                        <span><? echo $Newver?></span></div>
+                                                        <span><? echo $Newver ?></span></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -146,8 +153,8 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
                                 </div>
                                 <div class="card-body">
                                     <p class="m-0">
-                                        发布日期：<? echo $date ?><br><br>
-                                        更新内容：<br>
+                                        发布日期：（正在施工中）<? echo $Updatedate ?><br><br>
+                                        更新内容：（正在施工中）<br>
                                         <? echo $upContent ?>    
                                     </p>
                                 </div>

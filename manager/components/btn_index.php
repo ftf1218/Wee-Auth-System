@@ -21,18 +21,19 @@
                                         </span><span class="text-white text">新建授权</span></a>
                                     <!-- End: Split Button Success -->
                                     <!-- Start: Split Button Primary -->
-                                    <a
+                                    <!-- <a
                                         class="btn btn-primary btn-icon-split"
                                         role="button"
                                         style="margin-left: 35px;margin-bottom: 15px;margin-top: 15px;">
                                         <span class="text-white-50 icon">
                                             <i class="fas fa-flag"></i>
-                                        </span><span class="text-white text">未开放功能</span></a>
+                                        </span><span class="text-white text">未开放功能</span></a> -->
                                     <!-- End: Split Button Primary -->
                                     <!-- Start: Split Button Secondary -->
                                     <a
                                         class="btn btn-secondary btn-icon-split"
                                         role="button"
+                                        href="/"
                                         style="margin-left: 35px;margin-bottom: 15px;margin-top: 15px;">
                                         <span class="text-white-50 icon">
                                             <i class="fas fa-arrow-right"></i>
